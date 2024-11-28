@@ -1,0 +1,101 @@
+mysql> create table projeto ( id int auto_increment primary key, nome varchar(100) not null, descricao text, dataInit date, dataTermino date);
+ERROR 1050 (42S01): Table 'projeto' already exists
+mysql> show tables
+    -> ;
++---------------------------------+
+| Tables_in_gerenciamentoprojetos |
++---------------------------------+
+| projeto                         |
++---------------------------------+
+1 row in set (0.02 sec)
+
+mysql> describe projeto
+    -> ;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| nome        | varchar(100) | NO   |     | NULL    |                |
+| descricao   | text         | YES  |     | NULL    |                |
+| dataInit    | date         | YES  |     | NULL    |                |
+| dataTermino | date         | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> CREATE TABLE tarefa (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     nome VARCHAR(100) NOT NULL,
+    ->     descricao TEXT,
+    ->     statusT TEXT DEFAULT ('Pendente'),
+    ->     dataCriacao DATE,
+    ->     dataConclusao DATE,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 8
+mysql> CREATE TABLE tarefa (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     nome VARCHAR(100) NOT NULL,
+    ->     descricao TEXT,
+    ->     statusT TEXT,
+    ->     dataCriacao DATE,
+    ->     dataConclusao DATE,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 8
+mysql> 
+mysql> CREATE TABLE tarefa (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     nome VARCHAR(100) NOT NULL,
+    ->     descricao TEXT,
+    ->     statusT TEXT,
+    ->     dataCriacao DATE,
+    ->     dataConclusao DATE,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 8
+mysql> CREATE TABLE tarefa (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     nome VARCHAR(100) NOT NULL,
+    ->     descricao TEXT,
+    ->     statusT TEXT,
+    ->     dataCriacao DATE,
+    ->     dataConclusao DATE,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 8
+mysql> CREATE TABLE tarefa (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     nome VARCHAR(100) NOT NULL,
+    ->     descricao TEXT,
+    ->     statusT TEXT,
+    ->     dataCriacao DATE,
+    ->     dataConclusao DATE
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> describe tarefas
+    -> ;
+ERROR 1146 (42S02): Table 'gerenciamentoprojetos.tarefas' doesn't exist
+mysql> describe tarefa;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| nome          | varchar(100) | NO   |     | NULL    |                |
+| descricao     | text         | YES  |     | NULL    |                |
+| statusT       | text         | YES  |     | NULL    |                |
+| dataCriacao   | date         | YES  |     | NULL    |                |
+| dataConclusao | date         | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+
+mysql> select * from projeto
+    -> ;
++----+------------+-----------+------------+-------------+
+| id | nome       | descricao | dataInit   | dataTermino |
++----+------------+-----------+------------+-------------+
+|  3 | Projeto 1  | ASDASD    | 2024-11-19 | 2024-11-22  |
+|  4 | Projeto 5  | ash8fasf  | 2024-11-28 | 2024-11-28  |
+|  5 | Projeto 7  | ash8fasf  | 2024-11-28 | 2024-11-28  |
+|  6 | Projeto 9  | ash8fas   | 2024-11-28 | 2024-11-28  |
+|  7 | Projeto 90 | ash8fas   | 2024-11-28 | 2024-11-28  |
++----+------------+-----------+------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> Terminal close -- exit!
